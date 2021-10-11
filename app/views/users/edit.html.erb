@@ -1,2 +1,30 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+  <div class="column">
+    <h2 class="user-title">プロフィール編集</h2>
+
+    <div class="user-form">
+    <%= form_with model:@user, local: true do |f| %>
+      <div class="user-item">
+        <label>プロフィール画像</label>
+        <p><%= f.file_field :profile_image %></p>
+      </div>
+
+      <div class="user-item">
+        <label>名前（ニックネーム）</label>
+        <p><%= f.text_field :name, class:"form-control col-4" %></p>
+      </div>
+
+      <div class="user-item">
+        <label>自己紹介</label>
+        <p><%= f.text_area :introduction, class:"form-control form-control-lg col-4", style:"font-size: 1rem;" %></p>
+      </div>
+
+      <div class="user-item">
+        <%= f.submit "更新", class:"btn btn-danger btn-sm" %>
+      </div>
+
+    <% end %>
+    </div>
+
+  </div>
+</div>

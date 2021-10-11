@@ -1,2 +1,45 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+
+  <div class="column">
+    <h2 class="user-title">プロフィール</h2>
+
+    <div class="row">
+      <div class="col-2 offset-1">
+        <p class="user-profile-1">
+          <%= image_tag @user.profile_image, class:"profile-image", size:"120x120" %>
+        </p>
+      </div>
+
+      <div class="col-5">
+        <div class="user-profile-2">
+          <p class="user-name"><%= @user.name %></p>
+          <p><%= @user.introduction %></p>
+        </div>
+      </div>
+      
+      <div class="col-4">
+        <p><%= link_to "編集", edit_user_path(@user) %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <h2 class="my-cocktails-title">My Cocktails (<%= @cocktails.count %>)</h2>
+
+    <% @cocktails.each do |cocktail| %>
+      <div class="row">
+        <div class="col-2 offset-1">
+          <p><%= image_tag cocktail.image, class:"cocktail-image", size:"150x150" %></p>
+        </div>
+        
+        <div class="col-9">
+          <label><%= cocktail.name %></label>
+          <label><%= cocktail.base %></label>
+          <label><%= cocktail.taste %></label>
+          <label><%= cocktail.alcohol_degree %></label>
+        </div>
+      </div>
+    <% end %>
+  <div>
+
+</div>

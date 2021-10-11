@@ -1,3 +1,63 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.user-icon {
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #999 ;
+  }
+}
+
+.user-name {
+  font-size: 1.5rem;
+
+  a{
+    color: black;
+  }
+}
+
+.user-title {
+  margin: 2rem 1rem;
+}
+
+.user-profile-1 {
+    text-align: center;
+}
+
+.profile-image {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #999 ;
+}
+
+.my-cocktails-title {
+  font-family: 'Caveat', cursive;
+  margin: 4rem 1rem 2rem;
+}
+
+.user-form {
+  margin-left: 4rem;
+  margin-top: 3rem;
+
+  form {
+    margin: 0 auto;
+  }
+}
+
+.user-item {
+  margin-bottom: 2rem;
+
+  p {
+    margin-left: 2rem;
+  }
+
+  .btn {
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 8rem;
+  }
+}
