@@ -1,2 +1,49 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<div class="container">
+  <%= form_with model:@cocktail, local: true do |f| %>
+
+    <div class="row">
+
+      <div class="col-3 offset-1">
+        <%= f.file_field :image %>
+      </div>
+
+      <div class="col-8">
+        <div class="cocktail-item">
+          <label>名前</label>
+          <p><%= f.text_field :name, class:"form-control form-control-sm col-12" %></p>
+        </div>
+
+        <div class="cocktail-item">
+          <label>説明</label>
+          <p><%= f.text_area :description, class:"form-control form-control-lg col-12" %></p>
+        </div>
+
+        <div class="cocktail-item">
+          
+        </div>
+
+        <div class="cocktail-item">
+          <label>作り方</label>
+          <p><%= f.text_field :recipe, class:"form-control form-control-sm col-12" %></p>
+        </div>
+        <div class="cocktail-item">
+          <label>ベース</label>
+          <p><%= f.text_field :base, class:"form-control form-control-sm col-12" %></p>
+        </div>
+        <div class="cocktail-item">
+          <label>味（甘〜辛）</label>
+          <p><%= f.text_field :taste, class:"form-control form-control-sm col-12" %></p>
+        </div>
+        <div class="cocktail-item">
+          <label>度数</label>
+          <p><%= f.text_field :alcohol_degree, class:"form-control form-control-sm col-12" %></p>
+        </div>
+        <div class="cocktail-item">
+          <label>オススメ度</label>
+          <p><%= f.text_field :recommendation, class:"form-control form-control-sm col-12" %></p>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>
