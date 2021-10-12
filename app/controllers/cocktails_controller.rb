@@ -1,13 +1,13 @@
 class CocktailsController < ApplicationController
 
   def index
-    
+
   end
 
   def new
     @cocktail = Cocktail.new
   end
-  
+
   def create
     @cocktail = Cocktail.new(cocktail_params)
     @cocktail.create
@@ -19,7 +19,7 @@ class CocktailsController < ApplicationController
 
   def edit
   end
-  
+
   def update
   end
 
@@ -30,7 +30,8 @@ class CocktailsController < ApplicationController
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :description, :image, :material, :quantity, :recipe, :base, :taste, :alcohol_degree, :recommendation)
+    params.require(:cocktail).permit(:name, :description, :image, :recipe, :base, :taste, :alcohol_degree, :recommendation)
+    params.require(:material).permit(:material, :quantity,)
   end
 
 end
