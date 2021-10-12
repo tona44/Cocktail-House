@@ -32,7 +32,7 @@ class CocktailsController < ApplicationController
 
   def cocktail_params
     params.require(:cocktail).permit(
-      :name, :description, :image, :recipe, :base, :taste, :alcohol_degree, :recommendation, materials_attributes: [:name, :quantity, :cocktail_id]
+      :name, :description, :image, :recipe, :base, :taste, :alcohol_degree, :recommendation, materials_attributes: [:name, :quantity, :id]
       )                                                                                     # form_with親モデル内で、fields_for子モデルを扱う
   end
 
