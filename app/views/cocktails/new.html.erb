@@ -3,11 +3,14 @@
 
     <div class="row">
 
-      <div class="col-3 offset-1">
-        <%= f.file_field :image %>
+      <div class="col-3">
+
       </div>
 
-      <div class="col-8">
+      <div class="col-9">
+        <div class="cocktail-item">
+          <p><%= f.file_field :image %></p>
+        </div>
         <div class="cocktail-item">
           <label>名前</label>
           <p><%= f.text_field :name, class:"form-control form-control-sm col-12" %></p>
@@ -15,16 +18,34 @@
 
         <div class="cocktail-item">
           <label>説明</label>
-          <p><%= f.text_area :description, class:"form-control form-control-lg col-12" %></p>
+          <p><%= f.text_area :description, class:"form-control col-12" %></p>
         </div>
 
         <div class="cocktail-item">
-          
+          <%= f.fields_for :materials do |m| %>  <!--form_with親モデル内で、fields_for子モデルを扱う-->
+            <table class="material-item">
+              <tr class="material">
+                <td><label>材料</label></td>
+                <td><label>分量</label></td>
+              </tr>
+              <!--材料/分量 (8種類まで登録可)-->
+              <%= render 'cocktails/material', m: m %>
+              <%= render 'cocktails/material', m: m %>
+              <%= render 'cocktails/material', m: m %>
+              <%= render 'cocktails/material', m: m %>
+              <%= render 'cocktails/material', m: m %>
+              <%= render 'cocktails/material', m: m %>
+              <%= render 'cocktails/material', m: m %>
+              <%= render 'cocktails/material', m: m %>
+              
+              <%= m.hidden_field :id, value: m.object.id %>
+            </table>
+          <% end %>
         </div>
 
         <div class="cocktail-item">
           <label>作り方</label>
-          <p><%= f.text_field :recipe, class:"form-control form-control-sm col-12" %></p>
+          <p><%= f.text_area :recipe, class:"form-control form-control-sm col-12" %></p>
         </div>
         <div class="cocktail-item">
           <label>ベース</label>
@@ -41,6 +62,10 @@
         <div class="cocktail-item">
           <label>オススメ度</label>
           <p><%= f.text_field :recommendation, class:"form-control form-control-sm col-12" %></p>
+        </div>
+
+        <div class="cocktail-item">
+          <%= f.submit "投稿する", class:"btn btn-danger btn-sm col-6" %>
         </div>
       </div>
     </div>

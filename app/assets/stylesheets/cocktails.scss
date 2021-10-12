@@ -3,17 +3,30 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .cocktail-item {
-  display: flex;
 
   label {
-    width: 7rem;
-    text-align: right;
-    margin-right: 1rem;
-    padding-top: 0.2rem;
+    margin-bottom: -0.3rem;
+    font-size: 0.9rem;
   }
 
   p {
-    width: 13rem;
-    margin-right: 2rem;
+    width: 21rem;
+    margin-bottom: 1.5rem;
+
+    #cocktail_image {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.material-item {
+
+  td {
+    padding-right: 1rem;
+  }
+
+  p{
+    width: 10rem;
+    margin-bottom: 1rem;
   }
 }
