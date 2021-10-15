@@ -1,5 +1,5 @@
 class Material < ApplicationRecord
   
-  belongs_to :material
+  belongs_to :cocktail
   
 end

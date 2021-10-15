@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-2 offset-1">
         <p class="user-profile-1">
-          <%= image_tag @user.profile_image, class:"profile-image", size:"120x120" %>
+          <%= image_tag @user.profile_image %>
         </p>
       </div>
 
@@ -16,9 +16,11 @@
           <p><%= @user.introduction %></p>
         </div>
       </div>
-      
+
       <div class="col-4">
-        <p><%= link_to "編集", edit_user_path(@user) %></p>
+        <% if @user == current_user %>
+          <p><%= link_to "編集", edit_user_path(@user) %></p>
+        <% end %>
       </div>
     </div>
   </div>
@@ -28,15 +30,38 @@
 
     <% @cocktails.each do |cocktail| %>
       <div class="row">
-        <div class="col-2 offset-1">
-          <p><%= image_tag cocktail.image, class:"cocktail-image", size:"150x150" %></p>
+        <div class="col-4 offset-1">
+          <p class="cocktail-icon"><%=link_to image_tag(cocktail.image), cocktail_path(cocktail) %></p>
         </div>
-        
-        <div class="col-9">
-          <label><%= cocktail.name %></label>
-          <label><%= cocktail.base %></label>
-          <label><%= cocktail.taste %></label>
-          <label><%= cocktail.alcohol_degree %></label>
+
+        <div class="col-4">
+          <div class ="cocktail-info">
+            <label>名前：</label>
+            <span><%= cocktail.name %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>説明：</label>
+            <span><%= cocktail.description %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>ベース：</label>
+            <span><%= cocktail.base %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>味：</label>
+            <span><%= cocktail.taste %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>度数：</label>
+            <span><%= cocktail.alcohol_degree %></span>
+          </div>
+
+        </div>
+        <div class="col-1">
+          <p>いいね！</p>
+          <% if @user == current_user %>
+            <p><%= link_to "編集", edit_cocktail_path(cocktail) %></p>
+          <% end %>
         </div>
       </div>
     <% end %>

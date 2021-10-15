@@ -1,2 +1,52 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<div class="container">
+  <h2 class="cocktail-title"><%= @cocktail.name %></h2>
+
+  <div class="column">
+
+      <div class="row">
+        <div class="col-4 offset-1">
+          <p class="cocktail-icon"><%= image_tag @cocktail.image %></p>
+        </div>
+
+        <div class="col-4">
+          <div class ="cocktail-info">
+            <label>名前：</label>
+            <span><%= @cocktail.name %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>説明：</label>
+            <span><%= @cocktail.description %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>作り方：</label>
+            <span><%= @cocktail.recipe %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>ベース：</label>
+            <span><%= @cocktail.base %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>味：</label>
+            <span><%= @cocktail.taste %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>度数：</label>
+            <span><%= @cocktail.alcohol_degree %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>オススメ度：</label>
+            <span><%= @cocktail.recommendation %></span>
+          </div>
+        </div>
+
+        <div class="col-1">
+          <p>いいね！</p>
+          <% if @user == current_user %>
+            <p><%= link_to "編集", edit_cocktail_path(@cocktail) %></p>
+            <p><%= link_to "削除", cocktail_path(@cocktail), method: :delete, "data-confirm"=> "削除しますか？" %></p>
+          <% end %>
+        </div>
+      </div>
+
+  </div>
+</div>
