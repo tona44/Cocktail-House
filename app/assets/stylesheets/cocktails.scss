@@ -1,3 +1,55 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cocktail-title {
+  margin: 2rem;
+}
+
+.cocktail-item {
+
+  label {
+    margin-bottom: -0.3rem;
+    font-size: 0.9rem;
+  }
+
+  p {
+    width: 21rem;
+    margin-bottom: 1.5rem;
+
+    #cocktail_image {
+      margin-top: 1rem;
+    }
+  }
+
+  .btn {
+    width: 21rem;
+    margin-top: 0.3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.material-item {
+
+  td {
+    padding-right: 1rem;
+  }
+
+  p{
+    width: 10rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.cocktail-icon {
+  margin-bottom: 2rem;
+  text-align: center;
+
+  img {
+    border-radius: 10%;
+    object-fit: cover;
+    border: 1px solid #999 ;
+    height: 200px;
+    width: 200px;
+  }
+}

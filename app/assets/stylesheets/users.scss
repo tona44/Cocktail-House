@@ -9,6 +9,8 @@
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #999 ;
+    height: 100px;
+    width: 100px;
   }
 }
 
@@ -25,18 +27,24 @@
 }
 
 .user-profile-1 {
-    text-align: center;
+  text-align: center;
+
+  img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #999 ;
+    height: 120px;
+    width: 120px;
+  }
 }
 
-.profile-image {
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #999 ;
+.user-profile-2 {
+  padding-left: 1rem;
 }
 
 .my-cocktails-title {
   font-family: 'Caveat', cursive;
-  margin: 4rem 1rem 2rem;
+  margin: 5rem 3rem 2.3rem;
 }
 
 .user-form {

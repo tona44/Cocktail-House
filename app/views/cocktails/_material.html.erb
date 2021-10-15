@@ -1,0 +1,9 @@
+<%= f.fields_for :materials do |m| %>  <!--form_with親モデル内で、fields_for子モデルを扱う-->
+
+  <tr class="material">
+    <td><p><%= m.text_field :name, class:"form-control form-control-sm col-12" %></p></td>
+    <td><p><%= m.text_field :quantity, class:"form-control form-control-sm col-12" %></p></td>
+  </tr>
+  <%= m.hidden_field :id, value: m.object.id %>
+  
+<% end %>

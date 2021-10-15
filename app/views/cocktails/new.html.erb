@@ -1,2 +1,76 @@
-<h1>Cocktails#new</h1>
-<p>Find me in app/views/cocktails/new.html.erb</p>
+<div class="container">
+  <h2 class="cocktail-title">新しいカクテル</h2>
+  
+  <%= form_with model: @cocktail, local: true do |f| %>
+    <div class="row">
+      
+      <div class="col-4">
+        【画像プレビュー】
+      </div>
+
+      <div class="col-8">
+        <div class="cocktail-item">
+          <p><%= f.file_field :image %></p>
+        </div>
+        
+        <div class="cocktail-item">
+          <%= f.label :name, "名前 *" %>
+          <p><%= f.text_field :name, class:"form-control form-control-sm col-12" %></p>
+        </div>
+
+        <div class="cocktail-item">
+          <%= f.label :description, "説明" %>
+          <p><%= f.text_area :description, class:"form-control col-12" %></p>
+        </div>
+
+        <div class="cocktail-item">
+            <table class="material-item">
+              <tr class="material">
+                <td><label>材料</label></td>
+                <td><label>分量</label></td>
+              </tr>
+              <!--材料/分量 (8種類まで登録可)-->
+              <%= render 'cocktails/material', f: f %>
+              <%= render 'cocktails/material', f: f %>
+              <%= render 'cocktails/material', f: f %>
+              <%= render 'cocktails/material', f: f %>
+              <%= render 'cocktails/material', f: f %>
+              <%= render 'cocktails/material', f: f %>
+              <%= render 'cocktails/material', f: f %>
+              <%= render 'cocktails/material', f: f %>
+            </table>
+        </div>
+
+        <div class="cocktail-item">
+          <%= f.label :recipe, "作り方" %>
+          <p><%= f.text_area :recipe, class:"form-control form-control-sm col-12" %></p>
+        </div>
+        
+        <div class="cocktail-item">
+          <%= f.label :base, "ベース*" %>
+          <p><%= f.text_field :base, class:"form-control form-control-sm col-12" %></p>
+        </div>
+        
+        <div class="cocktail-item">
+          <%= f.label :taste, "味（甘〜辛）*" %>
+          <p><%= f.text_field :taste, class:"form-control form-control-sm col-12" %></p>
+        </div>
+        
+        <div class="cocktail-item">
+          <%= f.label :alcohol_degree, "度数" %>
+          <p><%= f.text_field :alcohol_degree, class:"form-control form-control-sm col-12" %></p>
+        </div>
+        
+        <div class="cocktail-item">
+          <%= f.label :recommendation, "オススメ度" %>
+          <p><%= f.text_field :recommendation, class:"form-control form-control-sm col-12" %></p>
+        </div>
+
+        <div class="cocktail-item">
+          <%= f.submit "投稿する", class:"btn btn-danger btn-sm" %>
+        </div>
+      </div>
+    </div>
+
+  <% end %>
+</div>

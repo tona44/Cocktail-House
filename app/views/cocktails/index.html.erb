@@ -1,2 +1,45 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
+<div class="container">
+  <h2 class="cocktail-title">すべてのカクテル</h2>
+  
+  <div class="column">
+    <% @cocktails.each do |cocktail| %>
+    
+      <div class="row">
+        <div class="col-4 offset-1">
+          <p class="cocktail-icon"><%=link_to image_tag(cocktail.image), cocktail_path(cocktail) %></p>
+        </div>
+        
+        <div class="col-4">
+          <div class ="cocktail-info">
+            <label>名前：</label>
+            <span><%= cocktail.name %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>説明：</label>
+            <span><%= cocktail.description %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>ベース：</label>
+            <span><%= cocktail.base %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>味：</label>
+            <span><%= cocktail.taste %></span>
+          </div>
+          <div class ="cocktail-info">
+            <label>度数：</label>
+            <span><%= cocktail.alcohol_degree %></span>
+          </div>
+          
+        </div>
+        <div class="col-1">
+          いいね！
+        </div>
+      </div>
+      
+    <% end %>
+  </div>
+
+
+
+</div>
