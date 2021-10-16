@@ -1,0 +1,17 @@
+<% comments.each do |comment| %>
+  <div class="row">
+    <div class="comment-icon">
+      <%= link_to user_path(comment.user) do %>
+        <%= image_tag comment.user.profile_image %><br>
+        <span><%= comment.user.name %></span>
+      <% end %>
+    </div>
+
+    <div class="comment">
+      <span><%= comment.comment %></span>
+      <% if comment.user == current_user %>
+        <p><%= link_to "削除", cocktail_comment_path(comment.cocktail,comment), method: :delete, remote: true %></p>
+      <% end %>
+    </div>
+  </div>
+<% end %>
