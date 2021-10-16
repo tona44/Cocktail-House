@@ -1,14 +1,14 @@
 <div class="container">
   <h2 class="cocktail-title">すべてのカクテル</h2>
-  
+
   <div class="column">
     <% @cocktails.each do |cocktail| %>
-    
+
       <div class="row">
         <div class="col-4 offset-1">
           <p class="cocktail-icon"><%=link_to image_tag(cocktail.image), cocktail_path(cocktail) %></p>
         </div>
-        
+
         <div class="col-4">
           <div class ="cocktail-info">
             <label>名前：</label>
@@ -30,13 +30,19 @@
             <label>度数：</label>
             <span><%= cocktail.alcohol_degree %></span>
           </div>
-          
+
         </div>
-        <div class="col-1">
-          いいね！
+        <div class="col-2">
+          <div class="row">
+            <div class="favorites-index">
+              <p id="favorite_<%= cocktail.id %>">
+                <%= render 'favorites/favorite', cocktail: cocktail %>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-      
+
     <% end %>
   </div>
 

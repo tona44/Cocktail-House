@@ -4,11 +4,17 @@
   <div class="column">
 
       <div class="row">
-        <div class="col-4 offset-1">
+        <div class="col-3 offset-1">
           <p class="cocktail-icon"><%= image_tag @cocktail.image %></p>
+
+          <div class="favorites">
+            <p id="favorite_<%= @cocktail.id %>">
+              <%= render 'favorites/favorite', cocktail: @cocktail %>
+            </p>
+          </div>
         </div>
 
-        <div class="col-4">
+        <div class="col-6">
           <div class ="cocktail-info">
             <label>名前：</label>
             <span><%= @cocktail.name %></span>
@@ -16,6 +22,21 @@
           <div class ="cocktail-info">
             <label>説明：</label>
             <span><%= @cocktail.description %></span>
+          </div>
+          <div class="cocktail-info">
+
+            <label>材料/分量</label><br>
+            <table class="material-info">
+              <% @materials.each do |material| %>
+                <% if material.name.present? %>  <!--空白データを除く-->
+                  <tr>
+                    <td><span><%= material.name %>：</span></td>
+                    <td><span><%= material.quantity %></span></td>
+                  </tr>
+                <% end %>
+              <% end %>
+            </table>
+
           </div>
           <div class ="cocktail-info">
             <label>作り方：</label>
@@ -39,11 +60,12 @@
           </div>
         </div>
 
-        <div class="col-1">
-          <p>いいね！</p>
+        <div class="col-2">
           <% if @user == current_user %>
-            <p><%= link_to "編集", edit_cocktail_path(@cocktail) %></p>
-            <p><%= link_to "削除", cocktail_path(@cocktail), method: :delete, "data-confirm"=> "削除しますか？" %></p>
+            <div class="row">
+              <p class="action"><%= link_to "編集", edit_cocktail_path(@cocktail) %> </p>
+              <p class="action"><%= link_to "削除", cocktail_path(@cocktail), method: :delete, "data-confirm"=> "削除しますか？" %></p>
+            </div>
           <% end %>
         </div>
       </div>

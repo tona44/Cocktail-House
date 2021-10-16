@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  
+
   devise_for :users
   root to: 'homes#top'
 
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   get '/users/:user_id/notifications', to: 'notification#index'
-  get '/users/:user_id/favorites', to: 'favorites#index'
+  get '/users/:user_id/favorites', to: 'favorites#index', as: 'favorites'
 
   resources :cocktails do
     resource :favorites, only: [:create, :destroy]

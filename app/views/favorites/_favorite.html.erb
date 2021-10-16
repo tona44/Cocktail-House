@@ -1,0 +1,9 @@
+<% if cocktail.favorited_by?(current_user) %>
+  <%= link_to cocktail_favorites_path(cocktail), method: :delete, remote: true do %>
+    ️♡ お気に入り登録する
+  <% end %>
+<% else %>
+  <%= link_to cocktail_favorites_path(cocktail), method: :post, remote: true do %>
+    ❤️ お気に入り登録済み
+  <% end %>
+<% end %>
