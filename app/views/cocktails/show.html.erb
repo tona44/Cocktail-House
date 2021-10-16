@@ -58,6 +58,23 @@
             <label>オススメ度：</label>
             <span><%= @cocktail.recommendation %></span>
           </div>
+
+          <div class="comments">
+            <h3 class="comment-title">Comments (<%= @comments.count %>)</h3>
+
+            <div class="comment-index">
+              <div id="comment_<%= @cocktail.id %>">
+                <%= render 'comments/comment', comments: @comments %>
+              </div>
+            </div>
+
+            <div class="comment-form">
+              <%= form_with( model:[@cocktail, @comment], remote: true) do |f| %>
+                <%= f.text_field :comment, class:"form-control form-control-lg", placeholder:"140字以内" %>
+                <%= f.submit "コメントする", class:"btn btn-sm btn-warning" %>
+              <% end %>
+            </div>
+          </div>
         </div>
 
         <div class="col-2">

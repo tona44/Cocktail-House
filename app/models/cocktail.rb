@@ -4,6 +4,7 @@ class Cocktail < ApplicationRecord
 
   belongs_to :user
   has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   # form_with親モデル内で、fields_for子モデルを扱う(newアクション)
   has_many :materials, dependent: :destroy

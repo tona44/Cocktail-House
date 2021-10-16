@@ -26,6 +26,8 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.find(params[:id])
     @user = @cocktail.user
     @materials = @cocktail.materials
+    @comment = Comment.new
+    @comments = @cocktail.comments
   end
 
   def edit
