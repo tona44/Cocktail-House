@@ -7,9 +7,17 @@
         <div class="col-3 offset-1">
           <p class="cocktail-icon"><%= image_tag @cocktail.image %></p>
 
+          <p>post_by</p>
+
           <div class="favorites">
             <p id="favorite_<%= @cocktail.id %>">
               <%= render 'favorites/favorite', cocktail: @cocktail %>
+            </p>
+          </div>
+
+          <div class="relationships">
+            <p id="relationships_<%= @user.id %>">
+              <%= render 'relationships/relationship',user: @user %>
             </p>
           </div>
         </div>
@@ -70,7 +78,7 @@
 
             <div class="comment-form">
               <%= form_with( model:[@cocktail, @comment], remote: true) do |f| %>
-                <%= f.text_field :comment, class:"form-control form-control-lg", placeholder:"140字以内" %>
+                <%= f.text_field :comment, class:"form-control form-control-lg", placeholder:"コメントする（140字以内）" %>
                 <%= f.submit "コメントする", class:"btn btn-sm btn-warning" %>
               <% end %>
             </div>
