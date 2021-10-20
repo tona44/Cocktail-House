@@ -2,42 +2,42 @@
   <div class="row">
     <h3 class="signup-title">新規登録</h3>
   </div>
-
+  
   <div class="row">
     <div class="signup-form-group">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
-
+      
         <div class="signup-field">
           <%= f.label "名前（ニックネーム）" %><br />
           <%= f.text_field :name, autocomplete: "name", class:"form-control" %>
         </div>
-
+        
         <div class="signup-field">
           <%= f.label "メールアドレス" %><br />
           <%= f.email_field :email, autocomplete: "email", class:"form-control" %>
         </div>
-
+      
         <div class="signup-field">
           <%= f.label "パスワード" %><br />
           <%= f.password_field :password, autocomplete: "new-password", placeholder:"6文字以上", class:"form-control" %>
         </div>
-
+      
         <div class="signup-field">
           <%= f.label "パスワード（確認）" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
         </div>
-
+      
         <div class="signup-actions">
           <%= f.submit "新規登録", class:"btn btn-success col-md-12" %>
         </div>
-
+        
         <div class="signup-info">
           <%= link_to "ログインはこちら", new_user_session_path %>
         </div>
-
+        
       <% end %>
     </div>
   </div>
-
+  
 </div>
