@@ -12,7 +12,11 @@
           <p><%= user.introduction %></p>
         </div>
         <div class="col-2">
-          <%= link_to "フォローする", class:"btn btn-outline-primary btn-sm" %>
+          <div class="relationships">
+            <p id="relationships_<%= user.id %>">
+              <%= render 'relationships/relationship',user: user %>
+            </p>
+          </div>
         </div>
       </div>
     <% end %>

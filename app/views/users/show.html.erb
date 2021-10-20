@@ -5,22 +5,35 @@
 
     <div class="row">
       <div class="col-2 offset-1">
-        <p class="user-profile-1">
+        <div class="user-profile-1">
           <%= image_tag @user.profile_image %>
-        </p>
+
+        <% if @user == current_user %>
+          <p class="action"><%= link_to "編集", edit_user_path(@user) %></p>
+        <% end %>
+        </div>
       </div>
 
       <div class="col-5">
         <div class="user-profile-2">
-          <p class="user-name"><%= @user.name %></p>
+          <label class="user-name"><%= @user.name %></label>
           <p><%= @user.introduction %></p>
+        </div>
+
+        <div class="user-profile-3">
+          <div class="follow-count">
+            <span><%= @user.followings.count %> 人をフォロー中</span>
+            <span>　<%= @user.followers.count %> 人のフォロワー</span>
+          </div>
         </div>
       </div>
 
-      <div class="col-4">
-        <% if @user == current_user %>
-          <p class="action"><%= link_to "編集", edit_user_path(@user) %></p>
-        <% end %>
+      <div class="col-3">
+        <div class="relationships">
+          <p id="relationships_<%= @user.id %>">
+            <%= render 'relationships/relationship',user: @user %>
+          </p>
+        </div>
       </div>
     </div>
   </div>

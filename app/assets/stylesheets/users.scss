@@ -36,15 +36,49 @@
     height: 120px;
     width: 120px;
   }
+
+  .action {
+    text-align: center;
+    margin-right: 0;
+    margin-top: 0.5rem;
+  }
 }
 
 .user-profile-2 {
   padding-left: 1rem;
+
+  p {
+    margin-left: 2rem;
+  }
+}
+
+.user-profile-3 {
+  padding-left: 1rem;
+  margin-top: 2rem;
+
+  p {
+    margin-left: 0;
+  }
+  span {
+    padding: 1rem 0;
+    font-size: 0.8rem;
+  }
+  // .btn {
+  //   margin-top: 0.4rem;
+  //   width: 30rem;
+  //   border: 1px solid #999;
+  // }
+  .fas {
+    color: teal;
+  }
+  a{
+    color: teal;
+  }
 }
 
 .my-cocktails-title {
   font-family: 'Caveat', cursive;
-  margin: 5rem 3rem 2.3rem;
+  margin: 4rem 3rem 2.3rem;
 }
 
 .user-form {
@@ -67,5 +101,19 @@
     margin-left: 2rem;
     margin-top: 2rem;
     width: 8rem;
+  }
+}
+
+.relationships {
+  text-align: center;
+  margin-top: -0.5rem;
+  font-family:"游ゴシック体";
+
+  .fas {
+    color: teal;
+  }
+
+  a{
+    color: teal;
   }
 }
