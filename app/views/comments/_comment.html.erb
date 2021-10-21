@@ -2,7 +2,11 @@
   <div class="row">
     <div class="comment-icon">
       <%= link_to user_path(comment.user) do %>
-        <%= image_tag comment.user.profile_image %><br>
+        <% if comment.user.profile_image.attached? %>
+          <%= image_tag comment.user.profile_image %><br>
+        <% else %>
+          <%= image_tag "no_image.jpg" %><br>
+        <% end %>
         <span><%= comment.user.name %></span>
       <% end %>
     </div>

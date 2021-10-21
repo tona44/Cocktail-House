@@ -1,0 +1,13 @@
+<span>
+  <%= link_to followings_user_path(user) do %>
+    <%= user.followings.count %> 人
+  <% end %>
+  をフォロー中
+</span>
+<span>　</span>
+<span>
+  <%= link_to followers_user_path(user) do %>
+    <%= user.followers.count %> 人
+  <% end %>
+  のフォロワー
+</span>

@@ -6,7 +6,11 @@
     <div class="row">
       <div class="col-2 offset-1">
         <div class="user-profile-1">
-          <%= image_tag @user.profile_image %>
+          <% if @user.profile_image.attached? %>
+            <%= image_tag @user.profile_image %>
+          <% else %>
+            <%= image_tag "no_image.jpg" %>
+          <% end %>
 
         <% if @user == current_user %>
           <p class="action"><%= link_to "編集", edit_user_path(@user) %></p>
@@ -21,17 +25,16 @@
         </div>
 
         <div class="user-profile-3">
-          <div class="follow-count">
-            <span><%= @user.followings.count %> 人をフォロー中</span>
-            <span>　<%= @user.followers.count %> 人のフォロワー</span>
+          <div id="follow_count_<%= @user.id %>">
+            <%= render 'relationships/counts', user: @user %>
           </div>
         </div>
       </div>
 
-      <div class="col-3">
+      <div class="col-2">
         <div class="relationships">
           <p id="relationships_<%= @user.id %>">
-            <%= render 'relationships/relationship',user: @user %>
+            <%= render 'relationships/relationship', user: @user %>
           </p>
         </div>
       </div>

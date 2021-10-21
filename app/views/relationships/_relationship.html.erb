@@ -1,7 +1,9 @@
-<% if user.is_followed_by?(current_user) %>
-  <i class="fas fa-user-friends"></i>
-  <%= link_to "フォロー中", user_relationships_path(user), method: :delete, remote: true %>
-<% else %>
-  <i class="fas fa-child"></i>
-  <%= link_to "フォローする", user_relationships_path(user), method: :post, remote: true %>
+<% if user != current_user %>
+  <% if user.is_followed_by?(current_user) %>
+    <i class="fas fa-user-friends"></i>
+    <%= link_to "フォロー中", user_relationships_path(user), method: :delete, remote: true %>
+  <% else %>
+    <i class="fas fa-child"></i>
+    <%= link_to "フォローする", user_relationships_path(user), method: :post, remote: true %>
+  <% end %>
 <% end %>
