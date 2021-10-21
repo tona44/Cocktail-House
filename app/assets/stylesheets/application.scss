@@ -33,24 +33,60 @@ body {
   font-family: "Hannari";
   // font-family: 'Abril Fatface', cursive;
   // font-family: 'Caveat', cursive;
+  background-image: url(image_home.jpg);
+  background-position: 0 23%;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 header {
-  height: 80px;
-  background-color: #927766;
+  // height: 9rem;
+  background-color: rgba(0,0,0,0.1);
+  background-blend-mode:lighten;
+}
+
+main {
+  background-color: rgba(210,190,180,0.6);
+  background-blend-mode:lighten;
+  border-top: solid 1px #999;
+  border-bottom: solid 1px #999;
+
+  .container {
+  background-color: rgba(210,190,180,0.8);
+  background-blend-mode:lighten;
+  padding-bottom: 4rem;
+  }
 }
 
 footer {
   position: absolute;
   width: 100%;
   bottom: 0;
-  height: 50px;
-  background-color: #927766;
+  height: 5rem;
+  background-color: rgba(0,0,0,0.1);
+  background-blend-mode:lighten;
 }
 
 .footerFixed {
   min-height: 100vh;
   position: relative;
   box-sizing: border-box;
-  padding-bottom: 70px;
+  padding-bottom: 5rem;
+}
+
+.header-container {
+  padding: 1rem 5rem;
+}
+
+.logo-title {
+  font-family: 'Caveat', cursive;
+  padding: 1rem;
+}
+
+.nav-item {
+  padding-left: 1rem;
+
+  a {
+    color: black;
+  }
 }

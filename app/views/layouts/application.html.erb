@@ -7,7 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
     <!--<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">-->
@@ -17,14 +17,36 @@
 
   <body>
     <div class="footerFixed">
-      <header></header>
-      
+      <header>
+        <div class="header-container">
+          <div class="row">
+            <div class="logo">
+              <%= link_to root_path do %>
+                <h1 class="logo-title">Cocktail-House</h1>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="row">
+            <% if user_signed_in? %>
+              <div class="nav-item"><%= link_to '通知', notifications_path(current_user) %></div>
+              <div class="nav-item"><%= link_to 'お気に入り', favorites_path(current_user) %></div>
+              <div class="nav-item"><%= link_to '検索', search_cocktails_path %></div>
+              <div class="nav-item"><%= link_to 'マイページ', user_path(current_user) %></div>
+              <div class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></div>
+            <% else %>
+              <div class="nav-item"><%= link_to 'ログイン', new_user_session_path %></div>
+            <% end %>
+          </div>
+        </div>
+      </header>
+
       <main>
       <%= yield %>
       </main>
-      
+
       <footer></footer>
     </div>
   </body>
-  
+
 </html>
