@@ -1,4 +1,4 @@
-<%# if @user != current_user %>
+<% if @user != current_user %>
   <% if cocktail.favorited_by?(current_user) %>
     <%= link_to cocktail_favorites_path(cocktail), method: :delete, remote: true do %>
       ️<i class="fas fa-heart"></i> お気に入り済み
@@ -8,4 +8,4 @@
       ♡ お気に入り登録
     <% end %>
   <% end %>
-<%# end %>
+<% end %>

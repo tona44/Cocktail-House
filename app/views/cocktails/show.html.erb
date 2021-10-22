@@ -23,16 +23,18 @@
         </div>
 
         <div class="col-6">
-          <div class ="cocktail-info">
+          <div class ="cocktail-info item">
+            ️<i class="fas fa-cocktail"></i>
             <label>名前：</label>
-            <span><%= @cocktail.name %></span>
+            <div><%= @cocktail.name %></div>
           </div>
-          <div class ="cocktail-info">
+          <div class ="cocktail-info item">
+            ️<i class="fas fa-cocktail"></i>
             <label>説明：</label>
-            <span><%= @cocktail.description %></span>
+            <div><%= @cocktail.description %></div>
           </div>
-          <div class="cocktail-info">
-
+          <div class="cocktail-info item">
+            ️<i class="fas fa-cocktail"></i>
             <label>材料/分量</label><br>
             <table class="material-info">
               <% @materials.each do |material| %>
@@ -46,23 +48,28 @@
             </table>
 
           </div>
-          <div class ="cocktail-info">
+          <div class ="cocktail-info item">
+            ️<i class="fas fa-cocktail"></i>
             <label>作り方：</label><br>
-            <span>　<%= @cocktail.recipe %></span>
+            <div><%= @cocktail.recipe %></div>
           </div>
-          <div class ="cocktail-info">
+          <div class ="cocktail-info item">
+            ️<i class="fas fa-cocktail"></i>
             <label>ベース：</label>
             <span><%= @cocktail.base %></span>
           </div>
-          <div class ="cocktail-info">
+          <div class ="cocktail-info item">
+            ️<i class="fas fa-cocktail"></i>
             <label>味：</label>
             <span><%= @cocktail.taste %></span>
           </div>
-          <div class ="cocktail-info">
+          <div class ="cocktail-info item">
+            ️<i class="fas fa-cocktail"></i>
             <label>度数：</label>
             <span><%= @cocktail.alcohol_degree %></span>
           </div>
-          <div class ="cocktail-info">
+          <div class ="cocktail-info item">
+            ️<i class="fas fa-cocktail"></i>
             <label>オススメ度：</label>
             <span><%= @cocktail.recommendation %></span>
           </div>

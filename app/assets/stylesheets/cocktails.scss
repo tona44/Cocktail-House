@@ -56,6 +56,18 @@
   }
 }
 
+.cocktail-info {
+  padding-bottom: 0.5rem;
+
+  div {
+    margin-left: 2rem;
+  }
+}
+
+.cocktail-info.item {
+  padding-bottom: 1rem;
+}
+
 .favorites-index {
   font-family:"游ゴシック体";
 }
@@ -77,7 +89,7 @@
 
 .material-info {
   margin-bottom: 1rem;
-  margin-left: 1rem;
+  margin-left: 2rem;
 
   span {
     margin-right: 0.5rem;
