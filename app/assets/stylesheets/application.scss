@@ -24,8 +24,12 @@
   box-sizing: border-box;
 }
 
-a{
+a {
   color: #dc3545;
+}
+
+ul {
+  list-style: none;
 }
 
 body {
@@ -34,27 +38,28 @@ body {
   // font-family: 'Abril Fatface', cursive;
   // font-family: 'Caveat', cursive;
   background-image: url(image_home.jpg);
-  background-position: 0 23%;
+  background-position: 0 35%;
   background-attachment: fixed;
   background-size: cover;
 }
 
 header {
-  // height: 9rem;
   background-color: rgba(0,0,0,0.1);
-  background-blend-mode:lighten;
+  background-blend-mode: lighten;
+  min-height: 8rem;
 }
 
 main {
   background-color: rgba(210,190,180,0.6);
-  background-blend-mode:lighten;
+  background-blend-mode: lighten;
   border-top: solid 1px #999;
   border-bottom: solid 1px #999;
 
   .container {
-  background-color: rgba(210,190,180,0.8);
-  background-blend-mode:lighten;
+  background-color: rgba(210,190,180,0.9);
+  background-blend-mode: lighten;
   padding-bottom: 4rem;
+  min-height: 31rem;
   }
 }
 
@@ -64,7 +69,7 @@ footer {
   bottom: 0;
   height: 5rem;
   background-color: rgba(0,0,0,0.1);
-  background-blend-mode:lighten;
+  background-blend-mode: lighten;
 }
 
 .footerFixed {
@@ -75,18 +80,50 @@ footer {
 }
 
 .header-container {
-  padding: 1rem 5rem;
+  padding: 0.5rem 5rem;
 }
 
 .logo-title {
   font-family: 'Caveat', cursive;
-  padding: 1rem;
+  padding: 1rem 1rem 0.5rem 1rem;
+  font-size: 3rem;
 }
 
-.nav-item {
-  padding-left: 1rem;
+.nav-bar {
+  margin-left: 2rem;
 
-  a {
-    color: black;
+  .nav-item {
+    padding: 0 1rem;
+    border-left: solid 1px #0006;
+    margin-top: 0.8rem;
+
+    a {
+      color: black;
+    }
+  }
+
+  .nav-item:hover {
+  background: #e8c984;
+  }
+
+  .nav-item.logout {
+    padding-top: 0.2rem;
+    font-size: 0.8rem;
+    color: #d5d4d4;
+    a {
+      color: #d5d4d4;
+    }
+  }
+
+  .new-cocktail {
+    margin-left: 7rem;
+
+    .btn {
+        border: solid 1px #d5a209;
+      }
+
+    a {
+      color: #3c0168;;
+    }
   }
 }

@@ -2,7 +2,7 @@ class CocktailsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @cocktails = Cocktail.all
+    @cocktails = Cocktail.all.reverse_order
     @materials = Material.where(params[:cocktail_id])
   end
 

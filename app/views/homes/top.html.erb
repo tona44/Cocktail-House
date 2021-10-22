@@ -1,4 +1,10 @@
-<div class="container">
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<div class="container-fluid">
+  <div class="top-page">
+    <p class="greeting">
+      <h1 class="greeting-main">Welcome to Cocktail-House !!</h1>
+    </p>
+    <p class="enter">
+      <%= link_to "enter", new_user_session_path, class:"btn btn-warning col-4" %>
+    </p>
+  </div>
 </div>

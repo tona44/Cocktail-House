@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
-  before_action :ensure_correct_user,only:[:edit,:update]
+  
 
   def index
     @users = User.all
@@ -13,7 +13,12 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id]) if @user == current_user
+    @user = User.find(params[:id])
+    if @user == current_user
+      render :edit
+    else
+      redirect_to root_path
+    end
   end
 
   def update

@@ -2,8 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.user-title {
+  padding: 2rem 1rem;
+}
+
+.all-users {
+  border-bottom: solid 1px #999;
+}
+
 .user-icon {
   text-align: center;
+  margin-bottom: 3rem;
 
   img {
     border-radius: 50%;
@@ -17,13 +26,9 @@
 .user-name {
   font-size: 1.5rem;
 
-  a{
+  a {
     color: black;
   }
-}
-
-.user-title {
-  padding: 2rem 1rem;
 }
 
 .user-profile-1 {
@@ -71,7 +76,7 @@
   .fas {
     color: teal;
   }
-  a{
+  a {
     color: teal;
   }
 }
@@ -106,14 +111,13 @@
 
 .relationships {
   text-align: center;
-  margin-top: -0.5rem;
   font-family:"游ゴシック体";
 
   .fas {
     color: teal;
   }
 
-  a{
+  a {
     color: teal;
   }
 }

@@ -10,7 +10,10 @@ class User < ApplicationRecord
   has_one_attached :profile_image
 
   has_many :cocktails, dependent: :destroy
+  
   has_many :favorites, dependent: :destroy
+  has_many :favorite_cocktails, through: :favorites, source: :cocktail
+  
   has_many :comments, dependent: :destroy
 
   has_many :relationships, foreign_key: :following_id, dependent: :destroy

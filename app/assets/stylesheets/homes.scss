@@ -1,0 +1,30 @@
+.container-fluid {
+  background-color: rgba(210,190,180,0);
+  background-blend-mode: lighten;
+  min-height: 23.6rem;
+  text-align: center;
+}
+
+.top-page {
+  margin-top: 8rem;
+  font-family: 'Caveat', cursive;
+
+  .greeting-main {
+    font-size: 5rem;
+    color: #2a0149;
+  }
+
+  .enter {
+    margin-top: 3rem;
+
+      a {
+      font-size: 3rem;
+      color: #3c0168;
+      }
+
+      .btn {
+        border: solid 1px #d5a209;
+      }
+    }
+
+}
