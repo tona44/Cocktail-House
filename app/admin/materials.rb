@@ -5,7 +5,7 @@ ActiveAdmin.register Material do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :cocktail_id, :name, :quantity
+  permit_params :cocktail_id, :name, :quantity
   #
   # or
   #
