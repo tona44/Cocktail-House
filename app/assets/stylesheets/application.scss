@@ -56,7 +56,7 @@ main {
   border-bottom: solid 1px #999;
 
   .container {
-  background-color: rgba(210,190,180,0.9);
+  background-color: rgba(210,190,180,0.8);
   background-blend-mode: lighten;
   padding-bottom: 4rem;
   min-height: 31rem;
@@ -70,6 +70,13 @@ footer {
   height: 5rem;
   background-color: rgba(0,0,0,0.1);
   background-blend-mode: lighten;
+
+  .copyright {
+    font-family: 'Caveat', cursive;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+  }
 }
 
 .footerFixed {
@@ -87,6 +94,7 @@ footer {
   font-family: 'Caveat', cursive;
   padding: 1rem 1rem 0.5rem 1rem;
   font-size: 3rem;
+  color: #932f0c
 }
 
 .nav-bar {
@@ -103,7 +111,7 @@ footer {
   }
 
   .nav-item:hover {
-  background: #e8c984;
+    background: #e8c984;
   }
 
   .nav-item.logout {

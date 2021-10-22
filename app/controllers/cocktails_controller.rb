@@ -32,12 +32,12 @@ class CocktailsController < ApplicationController
 
   def edit
     @cocktail = Cocktail.find(params[:id])
-      @cocktail.materials.build  # カクテルと材料を紐付(1:N)
+      @cocktail.materials.find_by(params[cocktail_id: @cocktail])  # カクテルに紐付いた材料
   end
 
   def update
     @cocktail = Cocktail.find(params[:id])
-      @cocktail.materials.build
+      @cocktail.materials.find_by(params[cocktail_id: @cocktail])  # カクテルに紐付いた材料
       if
         @cocktail.update(cocktail_params)
         redirect_to cocktail_path(@cocktail)
