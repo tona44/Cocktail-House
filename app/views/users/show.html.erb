@@ -1,9 +1,7 @@
 <div class="container">
 
   <div class="column">
-    <h2 class="user-title">
-      <i class="fas fa-user-alt"></i> プロフィール
-    </h2>
+    <h2 class="user-title"><i class="fas fa-user-alt"></i> プロフィール</h2>
 
     <div class="row">
       <div class="col-2 offset-1">
@@ -52,7 +50,7 @@
           <p class="cocktail-icon"><%=link_to image_tag(cocktail.image), cocktail_path(cocktail) %></p>
         </div>
 
-        <div class="col-4">
+        <div class="col-5">
           <div class ="cocktail-info">
             <label>名前：</label>
             <span><%= cocktail.name %></span>
@@ -75,10 +73,10 @@
           </div>
 
         </div>
-        <div class="col-4">
+        <div class="col-3">
           <div class="favorites-index">
             <p id="favorite_<%= cocktail.id %>">
-              <%= render 'favorites/favorite', cocktail: cocktail %>
+              <%= render 'favorites/favorite', cocktail: cocktail, user: cocktail.user %>
             </p>
           </div>
           <% if @user == current_user %>

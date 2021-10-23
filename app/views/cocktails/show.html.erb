@@ -11,7 +11,7 @@
 
           <div class="favorites">
             <p id="favorite_<%= @cocktail.id %>">
-              <%= render 'favorites/favorite', cocktail: @cocktail %>
+              <%= render 'favorites/favorite', cocktail: @cocktail, user: @cocktail.user %>
             </p>
           </div>
 

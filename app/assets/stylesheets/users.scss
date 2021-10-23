@@ -58,15 +58,15 @@
 }
 
 .user-profile-3 {
-  padding-left: 1rem;
-  margin-top: 2rem;
+  padding-left: 2rem;
+  margin-top: 1.5rem;
 
   p {
     margin-left: 0;
   }
   span {
     padding: 1rem 0;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
   // .btn {
   //   margin-top: 0.4rem;
@@ -111,6 +111,7 @@
 
 .relationships {
   font-family:"游ゴシック体";
+  text-align: center;
 
   .fas {
     color: teal;
@@ -119,4 +120,9 @@
   a {
     color: teal;
   }
+}
+
+.no-relationships {
+  text-align: center;
+  margin-top: 6rem;
 }

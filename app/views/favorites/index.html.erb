@@ -2,51 +2,55 @@
   <h2 class="cocktail-title">️<i class="fas fa-crown"></i> お気に入りカクテル</h2>
 
   <div class="column">
-    <% @cocktails.each do |cocktail| %>
+    <% if @cocktails.present? %>
 
-      <div class="row">
-        <div class="col-4 offset-1">
-          <p class="cocktail-icon"><%=link_to image_tag(cocktail.image), cocktail_path(cocktail) %></p>
-        </div>
-
-        <div class="col-4">
-          <div class ="cocktail-info">
-            <label>名前：</label>
-            <span><%= cocktail.name %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>説明：</label>
-            <span><%= cocktail.description %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>ベース：</label>
-            <span><%= cocktail.base %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>味：</label>
-            <span><%= cocktail.taste %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>度数：</label>
-            <span><%= cocktail.alcohol_degree %></span>
+      <% @cocktails.each do |cocktail| %>
+        <div class="row">
+          <div class="col-4 offset-1">
+            <p class="cocktail-icon"><%=link_to image_tag(cocktail.image), cocktail_path(cocktail) %></p>
           </div>
 
-        </div>
-        <div class="col-2">
-          <div class="row">
-            <div class="favorites-index">
-              <p id="favorite_<%= cocktail.id %>">
-                <%= render 'favorites/favorite', cocktail: cocktail %>
-              </p>
+          <div class="col-4">
+            <div class ="cocktail-info">
+              <label>名前：</label>
+              <span><%= cocktail.name %></span>
             </div>
-            post_by
+            <div class ="cocktail-info">
+              <label>説明：</label>
+              <span><%= cocktail.description %></span>
+            </div>
+            <div class ="cocktail-info">
+              <label>ベース：</label>
+              <span><%= cocktail.base %></span>
+            </div>
+            <div class ="cocktail-info">
+              <label>味：</label>
+              <span><%= cocktail.taste %></span>
+            </div>
+            <div class ="cocktail-info">
+              <label>度数：</label>
+              <span><%= cocktail.alcohol_degree %></span>
+            </div>
+
+          </div>
+          <div class="col-2">
+            <div class="row">
+              <div class="favorites-index">
+                <p id="favorite_<%= cocktail.id %>">
+                  <%= render 'favorites/favorite', cocktail: cocktail, user: cocktail.user %>
+                </p>
+              </div>
+              post_by
+            </div>
           </div>
         </div>
+      <% end %>
+      
+    <% else %>
+      <div class="no-favorites">
+        <p>お気に入りはありません</p>
       </div>
-
     <% end %>
   </div>
-
-
-
+  
 </div>

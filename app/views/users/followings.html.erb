@@ -2,26 +2,34 @@
   <h2 class="user-title"><i class="fas fa-glass-cheers"></i> フォロー中</h2>
 
   <div class="column">
-    <% @users.each do |user| %>
-      <div class="row">
-        <div class="col-2 offset-1">
-          <% if user.profile_image.attached? %>
-            <p class="user-icon"><%= link_to image_tag(user.profile_image), user_path(user) %></p>
-          <% else %>
-            <p class="user-icon"><%= link_to image_tag("no_image.jpg"), user_path(user) %></p>
-          <% end %>
-        </div>
-        <div class="col-5">
-          <label class="user-name"><%= link_to user.name, user_path(user) %></label>
-          <p><%= user.introduction %></p>
-        </div>
-        <div class="col-2">
-          <div class="relationships">
-            <p id="relationships_<%= user.id %>">
-              <%= render 'relationships/relationship',user: user %>
-            </p>
+    <% if @users.present? %>
+    
+      <% @users.each do |user| %>
+        <div class="row">
+          <div class="col-2 offset-1">
+            <% if user.profile_image.attached? %>
+              <p class="user-icon"><%= link_to image_tag(user.profile_image), user_path(user) %></p>
+            <% else %>
+              <p class="user-icon"><%= link_to image_tag("no_image.jpg"), user_path(user) %></p>
+            <% end %>
+          </div>
+          <div class="col-5">
+            <label class="user-name"><%= link_to user.name, user_path(user) %></label>
+            <p><%= user.introduction %></p>
+          </div>
+          <div class="col-2">
+            <div class="relationships">
+              <p id="relationships_<%= user.id %>">
+                <%= render 'relationships/relationship',user: user %>
+              </p>
+            </div>
           </div>
         </div>
+      <% end %>
+    
+    <% else %>
+      <div class="no-relationships">
+        <p>ユーザーはいません</p>
       </div>
     <% end %>
   </div>
