@@ -1,1 +1,1 @@
-$("#favorite_<%= @cocktail.id %>").html("<%= j(render 'favorites/favorite', cocktail: @cocktail) %>")
+$("#favorite_<%= @cocktail.id %>").html("<%= j(render 'favorites/favorite', cocktail: @cocktail, user: @cocktail.user) %>")

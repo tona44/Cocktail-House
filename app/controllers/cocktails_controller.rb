@@ -54,6 +54,7 @@ class CocktailsController < ApplicationController
   end
 
   def search
+    @cocktails = Cocktail.where(['name LIKE(?) or base LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%"])  
   end
 
 

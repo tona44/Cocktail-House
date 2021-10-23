@@ -97,6 +97,16 @@ footer {
   color: #932f0c
 }
 
+.login-user {
+  margin-top: 2.5rem;
+  margin-left: 2rem;
+
+  strong{
+    font-size: 1.2rem;
+    color: indigo;
+  }
+}
+
 .nav-bar {
   margin-left: 2rem;
 
@@ -111,7 +121,8 @@ footer {
   }
 
   .nav-item:hover {
-    background: #e8c984;
+    background: rgba(255,255,255,0.2);
+    border-radius: 3%;
   }
 
   .nav-item.logout {
@@ -128,6 +139,7 @@ footer {
 
     .btn {
         border: solid 1px #d5a209;
+        opacity: 0.95;
       }
 
     a {

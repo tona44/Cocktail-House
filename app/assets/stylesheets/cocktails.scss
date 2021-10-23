@@ -162,3 +162,14 @@
   }
 }
 
+.search-box {
+  form {
+    margin-left: 3rem;
+    display: flex;
+    opacity: 0.9;
+  }
+}
+
+.search-result {
+  margin: 4rem 3rem 2rem 3rem;
+}

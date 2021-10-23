@@ -9,6 +9,8 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.10/font-awesome-animation.css" type="text/css" media="all" />
+
     <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet">
     <!--<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
@@ -26,21 +28,24 @@
                   <h1 class="logo-title">Cocktail-House</h1>
                 <% end %>
               </div>
+              <div class="login-user">
+                <span>おかえりなさい <strong><%= current_user.name %></strong> さん！</span>
+              </div>
             </div>
 
             <div class="nav-bar">
               <div class="row">
-                <div class="nav-item"><%= link_to 'カクテル一覧', cocktails_path %></div>
-                <div class="nav-item"><%= link_to 'マイページ', user_path(current_user) %></div>
-                <div class="nav-item"><%= link_to 'お気に入り', favorites_path(current_user) %></div>
-                <div class="nav-item"><%= link_to '通知', notifications_path(current_user) %></div>
-                <div class="nav-item"><%= link_to '検索', search_cocktails_path %></div>
-                <div class="nav-item"><%= link_to 'すべてのユーザー', users_path %></div>
-                <div class="nav-item logout">
+                <div class="nav-item faa-horizontal animated-hover"><%= link_to 'カクテル一覧', cocktails_path %></div>
+                <div class="nav-item faa-horizontal animated-hover"><%= link_to 'マイページ', user_path(current_user) %></div>
+                <div class="nav-item faa-horizontal animated-hover"><%= link_to 'お気に入り', favorites_path(current_user) %></div>
+                <div class="nav-item faa-horizontal animated-hover"><%= link_to '通知', notifications_path(current_user) %></div>
+                <div class="nav-item faa-horizontal animated-hover"><%= link_to '検索', search_cocktails_path %></div>
+                <div class="nav-item faa-horizontal animated-hover"><%= link_to 'すべてのユーザー', users_path %></div>
+                <div class="nav-item logout faa-horizontal animated-hover">
                   <i class="fas fa-sign-out-alt"></i> <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
                 </div>
 
-                <div class="new-cocktail"><%= link_to " 🍸 カクテル新規投稿 ", new_cocktail_path, class:"btn btn-warning" %></div>
+                <div class="new-cocktail faa-horizontal animated-hover"><%= link_to "　カクテル新規投稿　", new_cocktail_path, class:"btn btn-warning" %></div>
               </div>
             </div>
           </div>
