@@ -40,7 +40,9 @@
       </div>
     </div>
   </div>
-
+  
+  
+  <!--ユーザー投稿カクテル-->
   <div class="column">
     <h2 class="my-cocktails-title">My Cocktails (<%= @cocktails.count %>)</h2>
 
@@ -50,7 +52,7 @@
           <p class="cocktail-icon"><%=link_to image_tag(cocktail.image), cocktail_path(cocktail) %></p>
         </div>
 
-        <div class="col-5">
+        <div class="col-4">
           <div class ="cocktail-info">
             <label>名前：</label>
             <span><%= cocktail.name %></span>
@@ -74,7 +76,7 @@
 
         </div>
         <div class="col-3">
-          <div class="favorites-index">
+          <div class="favorites-index-us">
             <p id="favorite_<%= cocktail.id %>">
               <%= render 'favorites/favorite', cocktail: cocktail, user: cocktail.user %>
             </p>

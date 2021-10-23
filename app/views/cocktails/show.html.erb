@@ -1,5 +1,7 @@
 <div class="container">
-  <h2 class="cocktail-title"><i class="fas fa-cocktail"></i> <%= @cocktail.name %></h2>
+  <h2 class="cocktail-title">
+    <i class="fas fa-cocktail"></i> <%= @cocktail.name %>
+  </h2>
 
   <div class="column">
 
@@ -7,7 +9,16 @@
         <div class="col-3 offset-1">
           <p class="cocktail-icon"><%= image_tag @cocktail.image %></p>
 
-          <p>post_by</p>
+          <% unless @user == current_user %>
+            <div class="user-icon-sm">
+              <div>
+              <span>post_by:</span>
+              <%= link_to user_path(@cocktail.user) do %>
+                <%= image_tag @cocktail.user.profile_image %><%= @cocktail.user.name %>
+              <% end %>
+              </div>
+            </div>
+          <% end %>
 
           <div class="favorites">
             <p id="favorite_<%= @cocktail.id %>">

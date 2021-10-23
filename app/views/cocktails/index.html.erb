@@ -5,7 +5,7 @@
     <% @cocktails.each do |cocktail| %>
 
       <div class="row">
-        <div class="col-4 offset-1">
+        <div class="col-3 offset-1">
           <p class="cocktail-icon"><%=link_to image_tag(cocktail.image), cocktail_path(cocktail) %></p>
         </div>
 
@@ -32,14 +32,22 @@
           </div>
 
         </div>
-        <div class="col-2">
-          <div class="row">
-            <div class="favorites-index">
-              <p id="favorite_<%= cocktail.id %>">
-                <%= render 'favorites/favorite', cocktail: cocktail, user: cocktail.user %>
-              </p>
+        <div class="col-3">
+          <% unless cocktail.user == current_user %>
+            <div class="user-icon-sm-2">
+              <div>
+                <span>post_by:</span>
+                <%= link_to user_path(cocktail.user) do %>
+                  <%= image_tag cocktail.user.profile_image %><%= cocktail.user.name %>
+                <% end %>
+              </div>
             </div>
-            post_by
+          <% end %>
+
+          <div class="favorites-index">
+            <p id="favorite_<%= cocktail.id %>">
+              <%= render 'favorites/favorite', cocktail: cocktail, user: cocktail.user %>
+            </p>
           </div>
         </div>
       </div>

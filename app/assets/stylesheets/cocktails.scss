@@ -44,7 +44,7 @@
 }
 
 .cocktail-icon {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 
   img {
@@ -70,12 +70,21 @@
 
 .favorites {
   text-align: center;
-  margin-top: -1rem;
   font-family:"游ゴシック体";
+
+  p {
+    margin-bottom: 0.3rem;
+  }
 }
 
 .favorites-index {
   font-family:"游ゴシック体";
+  margin-left: 5.5rem;
+  margin-top: 0.7rem;
+}
+
+.favorites-index-us {
+  margin-left: 1rem;
 }
 
 .no-favorites {
