@@ -129,9 +129,11 @@ footer {
     padding-top: 0.2rem;
     font-size: 0.8rem;
     color: #d5d4d4;
-    a {
-      color: #d5d4d4;
-    }
+    border-right: solid 1px #0006;
+
+      a {
+        color: #d5d4d4;
+      }
   }
 
   .new-cocktail {

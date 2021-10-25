@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   end
 
-  get '/users/:user_id/notifications', to: 'notifications#index', as: 'notifications'
+  # get '/users/:user_id/notifications', to: 'notifications#index', as: 'notifications'
   get '/users/:user_id/favorites', to: 'favorites#index', as: 'favorites'
 
   resources :cocktails do
@@ -28,5 +28,7 @@ Rails.application.routes.draw do
     end
 
   end
+  
+  resources :notifications, only: [:index]
 
 end

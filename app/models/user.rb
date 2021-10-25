@@ -26,5 +26,6 @@ class User < ApplicationRecord
       reverse_of_relationships.find_by(following_id: user.id).present?
     end
 
+  has_many :notifications, dependent: :destroy
 
 end
