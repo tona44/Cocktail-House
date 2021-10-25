@@ -2,12 +2,12 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = User.all
+    @users = User.all.page(params[:page]).per(5)
   end
 
   def show
     @user = User.find(params[:id])
-    @cocktails = @user.cocktails
+    @cocktails = @user.cocktails.page(params[:page]).per(5)
   end
 
   def edit
@@ -31,12 +31,12 @@ class UsersController < ApplicationController
 
   def followings
     user = User.find(params[:id])
-    @users = user.followings
+    @users = user.followings.page(params[:page]).per(5)
   end
 
   def followers
     user = User.find(params[:id])
-    @users = user.followers
+    @users = user.followers.page(params[:page]).per(5)
   end
 
 

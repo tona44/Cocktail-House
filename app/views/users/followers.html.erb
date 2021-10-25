@@ -3,7 +3,7 @@
 
   <div class="column">
     <% if @users.present? %>
-    
+
       <% @users.each do |user| %>
         <div class="row">
           <div class="col-2 offset-1">
@@ -26,12 +26,14 @@
           </div>
         </div>
       <% end %>
-    
+
     <% else %>
       <div class="no-relationships">
         <p>ユーザーはいません</p>
       </div>
     <% end %>
+
+    <div class="col-11"><%= paginate @users %></div>
   </div>
 
 </div>

@@ -1,14 +1,14 @@
 class FavoritesController < ApplicationController
 
   def index
-    @cocktails = current_user.favorite_cocktails
+    @cocktails = current_user.favorite_cocktails.page(params[:page]).per(5)
   end
 
   def create
     @cocktail = Cocktail.find(params[:cocktail_id])
     favorite = current_user.favorites.build(cocktail_id: @cocktail.id)
     favorite.save
-    
+
     # 通知作成
     @user = @cocktail.user
     if @user != current_user

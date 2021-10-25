@@ -149,3 +149,22 @@ footer {
     }
   }
 }
+
+.pagination {
+  opacity: 0.6;
+  margin-top: 1.5rem;
+  margin-bottom: -0.5rem;
+  justify-content: flex-end;
+  height: 2rem;
+
+  a {
+    color: #9d3600;
+  }
+  a:hover {
+    border-radius: 15%;
+  }
+
+  .page-item.active a {
+    background: #98706a;
+  }
+}

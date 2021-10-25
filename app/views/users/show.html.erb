@@ -40,8 +40,8 @@
       </div>
     </div>
   </div>
-  
-  
+
+
   <!--ユーザー投稿カクテル-->
   <div class="column">
     <h2 class="my-cocktails-title">My Cocktails (<%= @cocktails.count %>)</h2>
@@ -87,6 +87,8 @@
         </div>
       </div>
     <% end %>
+
+    <div class="col-11"><%= paginate @cocktails %></div>
   <div>
 
 </div>

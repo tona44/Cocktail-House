@@ -2,7 +2,7 @@ class CocktailsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @cocktails = Cocktail.all.reverse_order
+    @cocktails = Cocktail.all.reverse_order.page(params[:page]).per(5)
     @materials = Material.where(params[:cocktail_id])
   end
 
@@ -54,7 +54,7 @@ class CocktailsController < ApplicationController
   end
 
   def search
-    @cocktails = Cocktail.where(['name LIKE(?) or base LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%"])  
+    @cocktails = Cocktail.where(['name LIKE(?) or base LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%"]).page(params[:page]).per(5)
   end
 
 
