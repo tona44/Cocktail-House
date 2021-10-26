@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @cocktails = current_user.favorite_cocktails.page(params[:page]).per(5)
