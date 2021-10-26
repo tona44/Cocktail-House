@@ -5,7 +5,7 @@ ActiveAdmin.register Notification do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :user_id, :cocktail_id, :from_user_id, :comment, :variety, :checked
+  permit_params :user_id, :cocktail_id, :from_user_id, :comment, :variety, :checked
   #
   # or
   #
@@ -14,5 +14,5 @@ ActiveAdmin.register Notification do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end
