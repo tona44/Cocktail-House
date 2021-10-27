@@ -38,7 +38,12 @@
               <div>
                 <span>post_by:</span>
                 <%= link_to user_path(cocktail.user) do %>
-                  <%= image_tag cocktail.user.profile_image %><%= cocktail.user.name %>
+                  <% if cocktail.user.profile_image.attached? %>
+                    <%= image_tag cocktail.user.profile_image %>
+                  <% elsif %>
+                    <%= link_to image_tag("no_image.jpg"), user_path(cocktail.user) %>
+                  <% end %>
+                  <%= cocktail.user.name %>
                 <% end %>
               </div>
             </div>
