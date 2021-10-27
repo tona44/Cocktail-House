@@ -55,7 +55,7 @@
                     <% if cocktail.user.profile_image.attached? %>
                       <%= image_tag cocktail.user.profile_image %>
                     <% elsif %>
-                      <%= link_to image_tag("no_image.jpg"), user_path(cocktail.user) %>
+                      <%= image_tag("no_image.jpg") %>
                     <% end %>
                     <%= cocktail.user.name %>
                   <% end %>
