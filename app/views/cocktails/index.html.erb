@@ -10,28 +10,9 @@
         </div>
 
         <div class="col-4">
-          <div class ="cocktail-info">
-            <label>名前：</label>
-            <span><%= cocktail.name %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>説明：</label>
-            <span><%= cocktail.description %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>ベース：</label>
-            <span><%= cocktail.base %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>味：</label>
-            <span><%= cocktail.taste %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>度数：</label>
-            <span><%= cocktail.alcohol_degree %></span>
-          </div>
-
+          <%= render 'cocktails/cocktail_index', cocktail: cocktail %> <!--カクテル一覧-->
         </div>
+
         <div class="col-3">
           <% unless cocktail.user == current_user %>
             <div class="user-icon-sm-2">

@@ -52,29 +52,10 @@
           <p class="cocktail-icon"><%=link_to image_tag(cocktail.image), cocktail_path(cocktail) %></p>
         </div>
 
-        <div class="col-4">
-          <div class ="cocktail-info">
-            <label>名前：</label>
-            <span><%= cocktail.name %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>説明：</label>
-            <span><%= cocktail.description %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>ベース：</label>
-            <span><%= cocktail.base %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>味：</label>
-            <span><%= cocktail.taste %></span>
-          </div>
-          <div class ="cocktail-info">
-            <label>度数：</label>
-            <span><%= cocktail.alcohol_degree %></span>
-          </div>
-
+        <div class="col-5">
+          <%= render 'cocktails/cocktail_index', cocktail: cocktail %> <!--カクテル一覧-->
         </div>
+        
         <div class="col-3">
           <div class="favorites-index-us">
             <p id="favorite_<%= cocktail.id %>">

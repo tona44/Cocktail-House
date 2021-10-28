@@ -64,6 +64,17 @@
   }
 }
 
+.cocktail-info.dsc {
+  display: flex;
+  
+  div {
+    margin-left: 0;
+  }
+  label {
+    width: 4rem;
+  }
+}
+
 .cocktail-info.item {
   padding-bottom: 1rem;
 }
