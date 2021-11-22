@@ -29,11 +29,11 @@
 - ログイン機能
 - 各種CRUD処理
 
-## 設計書
+## アプリケーション設計書
 https://docs.google.com/spreadsheets/d/1P0qrh5f5h3XPvDJVnLZqJjgk5_19jMPzlughIYMi2vE/edit?usp=sharing
 
-## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/13fP4_LbJ-0KsmnTh7pCWci8SwbJFkMY1-Zqf_ufHe-k/edit#gid=0
+## AWSインフラ設計書（本番環境）
+https://docs.google.com/spreadsheets/d/1DvQ9r4ciTUtFFAEaWF-CAN_JPNa39tO-vbG6i6xHIUM/edit#gid=0
 
 ## 開発環境
 - OS：Linux(CentOS)
