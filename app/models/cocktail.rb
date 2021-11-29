@@ -13,7 +13,9 @@ class Cocktail < ApplicationRecord
   validates :name, presence: true
   validates :base, presence: true
   validates :taste, presence: true
-  validates :image, presence: true
+  
+  # 使えなかった(Active Strageにおけるimageカラム)
+  # validates :image, presence: true
 
   # validate :validate_image
   #   def validate_image

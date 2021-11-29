@@ -49,6 +49,7 @@
 
   img {
     border-radius: 5%;
+    box-shadow: 0 0 0.5rem rgba(146,115,109,0.8);
     object-fit: cover;
     border: 1px solid #999 ;
     height: 250px;
@@ -66,7 +67,7 @@
 
 .cocktail-info.dsc {
   display: flex;
-  
+
   div {
     margin-left: 0;
   }

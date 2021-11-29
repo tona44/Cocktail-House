@@ -13,13 +13,22 @@ class CocktailsController < ApplicationController
 
   def create
     @cocktail = current_user.cocktails.build(cocktail_params)  # 投稿ユーザー紐付(new => build)
-      if
-        @cocktail.save
-        redirect_to cocktails_path
-      else
-        @cocktail.materials.build
-        render :new
-      end
+
+    # user friendly によせる（材料分量どちらか一方しか入力されていないデータをここで弾く。private以下参照）
+    if incomplete_materials.present?
+      # @cocktail.materials.build
+      render :new and return  # 文中でrenderする場合はand returnが必要
+    end
+
+    @cocktail.materials = both_filled_materials  # 材料分量両方入力されたデータを代入（private以下参照）
+    
+    if @cocktail.valid? && @cocktail.image.attached?  # 先んじてバリデーションの確認 && ActiveStrageのバリデーション代わり
+      @cocktail.save
+      redirect_to cocktails_path
+    else
+      # @cocktail.materials.build
+      render :new
+    end
   end
 
   def show
@@ -38,24 +47,29 @@ class CocktailsController < ApplicationController
   def update
     @cocktail = Cocktail.find(params[:id])
       @cocktail.materials.find_by(params[cocktail_id: @cocktail])  # カクテルに紐付いた材料
-      if
+      if @cocktail.user == current_user
         @cocktail.update(cocktail_params)
         redirect_to cocktail_path(@cocktail)
       else
         @cocktail.materials.build
-        render edit
+        render :edit
       end
   end
 
   def destroy
     @cocktail = Cocktail.find(params[:id])
-    @cocktail.destroy
-    redirect_to cocktails_path
+    if @cocktail.user == current_user
+      @cocktail.destroy
+      redirect_to cocktails_path
+    else
+      redirect_to root_path
+    end
   end
 
   def search
     @cocktails = Cocktail.where(['name LIKE(?) or base LIKE(?)', "%#{params[:search]}%", "%#{params[:search]}%"]).page(params[:page]).per(5)
   end
+
 
 
   private
@@ -64,6 +78,18 @@ class CocktailsController < ApplicationController
     params.require(:cocktail).permit(
       :name, :description, :image, :recipe, :base, :taste, :alcohol_degree, :recommendation, materials_attributes: [:name, :quantity, :id]
       )                                                                                     # form_with親モデル内で、fields_for子モデルを扱う
+  end
+
+  def incomplete_materials  # 材料分量どちらか一方が入力されているデータ
+    @cocktail.materials - both_filled_materials - empty_filled_materials
+  end
+
+  def both_filled_materials  # 材料分量両方入っているデータ
+    @cocktail.materials.filter{ |material| material.name.present? && material.quantity.present? }
+  end
+
+  def empty_filled_materials  # 材料分量両方入っていないデータ
+    @cocktail.materials.filter{ |material| !material.name.present? && !material.quantity.present? }
   end
 
 end
