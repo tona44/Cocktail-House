@@ -1,7 +1,7 @@
 class CocktailsController < ApplicationController
   before_action :authenticate_user!
 
-  MATERIAL_MAX_COUNT = 8
+  MATERIAL_MAX_COUNT = 8  # 材料分量の上限値(変数名任意)
 
   def index
     @cocktails = Cocktail.all.reverse_order.page(params[:page]).per(5)
@@ -10,7 +10,7 @@ class CocktailsController < ApplicationController
 
   def new
     @cocktail = Cocktail.new
-    MATERIAL_MAX_COUNT.times { @cocktail.materials.build } # カクテルと材料を紐付(1:N)
+    MATERIAL_MAX_COUNT.times { @cocktail.materials.build } # 材料分量を8回buildする
   end
 
   def create
@@ -42,12 +42,12 @@ class CocktailsController < ApplicationController
   def edit
     @cocktail = Cocktail.find(params[:id])
     @cocktail.materials.find_by(params[cocktail_id: @cocktail])  # カクテルに紐付いた材料
-    (MATERIAL_MAX_COUNT - @cocktail.materials.count).times { @cocktail.materials.build }
+    (MATERIAL_MAX_COUNT - @cocktail.materials.count).times { @cocktail.materials.build }  # 入力済データを除いた数だけフォームを作成する
   end
 
   def update
     @cocktail = Cocktail.find(params[:id])
-    @cocktail.attributes = cocktail_params  # ".attributes"は、入力されたデータを保存はせず一旦インスタンス格納するメソッド
+    @cocktail.attributes = cocktail_params  # ".attributes"は、入力されたデータ(cocktail_params)をDB保存せずに一旦インスタンス格納するメソッド
     
     # user friendly によせる（材料分量どちらか一方しか入力されていないデータをここで弾く。private以下参照）
     if incomplete_materials.present?

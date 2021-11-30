@@ -1,9 +1,19 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
-  # before_action :authenticate_user!, except: [:top]
+
 
   def after_sign_in_path_for(resource)
-    cocktails_path
+    case resource
+      when User
+        cocktails_path
+      when AdminUser
+        stored_location_for(resource) ||
+        if resource.is_a?(AdminUser)
+          admin_root_path
+        else
+          super
+        end
+    end
   end
 
   def after_sign_out_path_for(resouce)
